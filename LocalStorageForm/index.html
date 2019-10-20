@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>User Form</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+      integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./css/styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <div id="loaderDiv">
+        <p id="loadingImg">
+          <img src="./images/loading.gif" />
+        </p>
+      </div>
+      <form class="form" id="form-1" autocomplete="on">
+        <div class="alert bg-success" id="formSuccessMsg" role="alert"></div>
+        <div class="alert alert-danger" id="formFailureMsg" role="alert"></div>
+        <div class="form-group">
+          <label for="fNameInput">First name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="fNameInput"
+            name="name"
+            placeholder="Required"
+            autofocus
+            required
+          />
+          <div class="alertMsg" id="fNameAlert">Enter your first name</div>
+        </div>
+        <div class="form-group">
+          <label for="lNameInput">Last name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="lNameInput"
+            name="surname"
+            placeholder="Required"
+            required
+          />
+          <div class="alertMsg" id="fNameAlert">Enter your last name</div>
+        </div>
+
+        <div class="form-group">
+          <label for="emailInput">Email</label>
+          <input
+            type="email"
+            class="form-control"
+            id="emailInput"
+            name="email"
+            placeholder="Required"
+            required
+          />
+          <div class="alertMsg" id="fNameAlert">
+            Provide a valid email address
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="dobInput">Date of birth</label>
+          <input
+            type="date"
+            class="form-control dobInput"
+            id="dobInput"
+            name="dob"
+            aria-describedby="dobHelp"
+            required
+            pattern="\d{4}-\d{2}-\d{2}"
+          />
+          <div class="alertMsg" id="dobAlert">
+            Provide a date of birth
+          </div>
+          <small id="dobHelp">(Required)</small>
+        </div>
+        <!-- SUBMIT -->
+        <button type="submit" class="btn btn-primary btn-block">
+          Submit
+        </button>
+      </form>
+    </main>
+    <footer>
+      <h5>
+        Designed and developed by <strong>Arpad Kajari</strong><br />
+        &copy; 2019
+      </h5>
+      <div class="grams">
+        <a href="https://github.com/trave84" target="_blank"
+          ><i class="fab fa-github"></i
+        ></a>
+        <a href="https://www.linkedin.com/in/arpad-kajari/" target="_blank"
+          ><i class="fab fa-linkedin-in"></i
+        ></a>
+        <a href="https://www.instagram.com/trave84/" target="_blank"
+          ><i class="fab fa-instagram"></i
+        ></a>
+      </div>
+    </footer>
+
+    <script src="./js/validation.js"></script>
+    <script src="./js/localStore.js"></script>
+  </body>
+</html>

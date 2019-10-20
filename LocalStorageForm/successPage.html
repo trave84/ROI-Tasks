@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Your data was submitted</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link
+        rel="stylesheet"
+        href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+        />
+        <link
+        rel="stylesheet"
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+        crossorigin="anonymous"
+        />
+
+        <link rel="stylesheet" href="./css/styles.css" />
+    </head>
+    <body>
+        <main class="container">
+            <h2 class="greetings">Thank you for you time, <span id="greetingsName"></span>!</h2>
+            <br><br>
+            <h4>Here is the summary of the data you submitted:</h4>
+            <br>
+            <table>
+              <tr>
+                <th>Data</th>
+                <th>Value</th>
+              </tr>
+              <tr>
+                <td>First name</td>
+                <td id="submittedName"></th>
+              </tr>
+              <tr>
+                <td>Surname</td>
+                <td id="submittedSurname"></td>
+              </tr>
+              <tr>
+                <td>Email</td>
+                <td id="submittedEmail"></td>
+              </tr>
+              <tr>
+                <td>Date of birth</td>
+                <td id="submittedDob"></td>
+              </tr>
+            </table>
+        </main>
+        <footer>
+            <h5>
+              Designed and developed by <strong>Arpad Kajari</strong><br />
+              &copy; 2019
+            </h5>
+            <div class="grams">
+              <a href="https://github.com/trave84" target="_blank"
+                ><i class="fab fa-github"></i
+              ></a>
+              <a href="https://www.linkedin.com/in/arpad-kajari/" target="_blank"
+                ><i class="fab fa-linkedin-in"></i
+              ></a>
+              <a href="https://www.instagram.com/trave84/" target="_blank"
+                ><i class="fab fa-instagram"></i
+              ></a>
+            </div>
+          </footer>
+        <script>
+            let greetingsName = document.getElementById("greetingsName");
+            let submittedName = document.getElementById("submittedName");
+            let submittedSurname = document.getElementById("submittedSurname");
+            let submittedEmail = document.getElementById("submittedEmail");
+            let submittedDob = document.getElementById("submittedDob");
+
+            greetingsName.innerHTML +=  localStorage.getItem('name');   
+            submittedName.innerHTML +=  localStorage.getItem('name');   
+            submittedSurname.innerHTML +=  localStorage.getItem('surname');   
+            submittedEmail.innerHTML +=  localStorage.getItem('email');   
+            submittedDob.innerHTML +=  localStorage.getItem('dob');   
+        </script>
+    </body>
+</html>

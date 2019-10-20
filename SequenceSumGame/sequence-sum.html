@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+  <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <title>Sequence  Sum Game</title>
+      <meta name="description" content="">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+      integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+      crossorigin="anonymous"
+    />
+
+      <script>
+        const pattern = /^[0-9]*$/;
+        let numberSequence = prompt(
+          `Give me a sequence of number \n(Only numbers, no spaces or other characters)`
+        );
+  
+        if (!pattern.test(numberSequence)) {
+          while (!pattern.test(numberSequence)) {
+            numberSequence = prompt(
+              `Only numbers, no spaces or other characters`
+            );
+          }
+        }
+        
+        // let userInput = "";
+        function numberChecker(numberSequence) {
+          if (!(pattern.test(numberSequence))) {
+            console.log(
+              "Please provide 0-9 digits only, no spaces or other character!"
+            );
+          }
+        }
+        userInput = numberSequence.toString();
+        const splitDigits = userInput.split("");
+        const digits = splitDigits.map(Number);
+  
+        function sumDuplicates(digits) {
+          let sum = 0;
+          for (let i = 0; i <= digits.length - 1; i++) {
+            if (digits[i] === digits[i + 1]) {
+              sum += digits[i];
+              console.log(`Digit value: ${digits[i]} Sum: ${sum}`);
+              // window.alert(`Digit value: ${digits[i]} Sum: ${sum}`);
+            } else if (i === digits.length - 1 && digits[i] === digits[0]) {
+              sum += digits[i];
+              console.log(`Digit value: ${digits[i]} Sum: ${sum}`);
+              // window.alert(`Digit value: ${digits[i]} Sum: ${sum}`);
+            } else {
+              sum += 0;
+            }
+          }
+          if (sum === 0) {
+            console.log("There are no consecutive digits in your sequence");
+            window.alert("There are no consecutive digits in your sequence");
+          }else{
+          console.log(`TOTAL SUM: ${sum}`);
+          window.alert(`TOTAL SUM: ${sum}`)
+          }
+        }
+        sumDuplicates(digits);
+      </script>
+  </head>
+  <body>
+    <div class="container">
+      <h3>Get all details from Developer Tools > Console</h3>
+      <button type="button" class="btn btn-success" onClick="document.location.reload(true)">Play again</button>
+    </div>
+  </body>
+</html>
